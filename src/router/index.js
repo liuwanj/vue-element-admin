@@ -67,15 +67,27 @@ export const asyncRouterMap = [
     path: '/permission',
     component: Layout,
     redirect: '/permission/index',
-    meta: { roles: ['admin'] }, // you can set roles in root nav
+    alwaysShow: true, // will always show the root menu
+    meta: {
+      title: 'permission',
+      icon: 'lock',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
     children: [{
-      path: 'index',
-      component: _import('permission/index'),
-      name: 'permission',
+      path: 'page',
+      component: _import('permission/page'),
+      name: 'pagePermission',
       meta: {
-        title: 'permission',
-        icon: 'lock',
+        title: 'pagePermission',
         roles: ['admin'] // or you can only set roles in sub nav
+      }
+    }, {
+      path: 'directive',
+      component: _import('permission/directive'),
+      name: 'directivePermission',
+      meta: {
+        title: 'directivePermission'
+        // if do not set roles, means: this page does not require permission
       }
     }]
   },
@@ -111,7 +123,9 @@ export const asyncRouterMap = [
       { path: 'sticky', component: _import('components-demo/sticky'), name: 'sticky-demo', meta: { title: 'sticky' }},
       { path: 'count-to', component: _import('components-demo/countTo'), name: 'countTo-demo', meta: { title: 'countTo' }},
       { path: 'mixin', component: _import('components-demo/mixin'), name: 'componentMixin-demo', meta: { title: 'componentMixin' }},
-      { path: 'back-to-top', component: _import('components-demo/backToTop'), name: 'backToTop-demo', meta: { title: 'backToTop' }}
+      { path: 'back-to-top', component: _import('components-demo/backToTop'), name: 'backToTop-demo', meta: { title: 'backToTop' }},
+      { path: 'drag-dialog', component: _import('components-demo/dragDialog'), name: 'dragDialog-demo', meta: { title: 'dragDialog' }},
+      { path: 'drag-kanban', component: _import('components-demo/dragKanban'), name: 'dragKanban-demo', meta: { title: 'dragKanban' }}
     ]
   },
 
