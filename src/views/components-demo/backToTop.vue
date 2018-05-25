@@ -3,7 +3,7 @@
     <code>{{$t('components.backToTopTips1')}}</code>
     <code>{{$t('components.backToTopTips2')}}</code>
     <div class="placeholder-container">
-      <div>placeholder</div>
+      <div>placeholder1111</div>
       <div>placeholder</div>
       <div>placeholder</div>
       <div>placeholder</div>
